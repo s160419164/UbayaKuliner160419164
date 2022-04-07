@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigarion"
+    app:startDestination="@id/itemHome">
+
+    <fragment
+        android:id="@+id/itemHome"
+        android:name="com.ubaya.ubayakuliner160419164.view.ListKulinerFragment"
+        android:label="List Screen"
+        tools:layout="@layout/fragment_list_kuliner" >
+        <action
+            android:id="@+id/actionDetailKuliner"
+            app:destination="@id/detailListKulinerFragment" />
+        <action
+            android:id="@+id/actionItemProfile"
+            app:destination="@id/itemProfile" />
+        <action
+            android:id="@+id/actionItemHistory"
+            app:destination="@id/itemHistory" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailListKulinerFragment"
+        android:name="com.ubaya.ubayakuliner160419164.view.DetailListKulinerFragment"
+        android:label="Detail Screen"
+        tools:layout="@layout/fragment_detail_list_kuliner" >
+        <argument
+            android:name="idKuliner"
+            app:argType="string" />
+        <action
+            android:id="@+id/actionItemHome"
+            app:destination="@id/itemHome" />
+        <action
+            android:id="@+id/actionReviewFragment"
+            app:destination="@id/reviewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemProfile"
+        android:name="com.ubaya.ubayakuliner160419164.view.ProfileFragment"
+        android:label="Profile Screen"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/actionVoucherFragment"
+            app:destination="@id/voucherFragment" />
+        <action
+            android:id="@+id/actionHelpFragment"
+            app:destination="@id/itemHelp" />
+        <action
+            android:id="@+id/actionPayFragment"
+            app:destination="@id/payFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reviewFragment"
+        android:name="com.ubaya.ubayakuliner160419164.view.ReviewFragment"
+        android:label="Review Screen"
+        tools:layout="@layout/fragment_review" />
+    <fragment
+        android:id="@+id/itemHistory"
+        android:name="com.ubaya.ubayakuliner160419164.view.HistoryFragment"
+        android:label="History Screen"
+        tools:layout="@layout/fragment_history" />
+    <fragment
+        android:id="@+id/voucherFragment"
+        android:name="com.ubaya.ubayakuliner160419164.view.VoucherFragment"
+        android:label="Voucher Screen"
+        tools:layout="@layout/fragment_voucher" />
+    <fragment
+        android:id="@+id/itemHelp"
+        android:name="com.ubaya.ubayakuliner160419164.view.HelpFragment"
+        android:label="Customer Service"
+        tools:layout="@layout/fragment_help" />
+    <fragment
+        android:id="@+id/payFragment"
+        android:name="com.ubaya.ubayakuliner160419164.view.PayFragment"
+        android:label="Metode Pembayaran"
+        tools:layout="@layout/fragment_pay" />
+</navigation>
